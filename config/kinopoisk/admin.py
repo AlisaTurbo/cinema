@@ -1,8 +1,8 @@
 from django.contrib import admin
-from films.models import *
+from kinopoisk.models import *
 # Register your models here.
-@admin.register(FilmPerson)
-class FilmPersonAdmin(admin.ModelAdmin):
+@admin.register(MoviePerson)
+class MoviePersonAdmin(admin.ModelAdmin):
     list_display=(
         "id",
         "role",
@@ -10,25 +10,24 @@ class FilmPersonAdmin(admin.ModelAdmin):
     )
 
 @admin.register(Genre)
-class Genreadmin(admin.ModelAdmin):
-    list_display=(
+class GenreAdmin(admin.ModelAdmin):
+   list_display=(
         "id",
         "name",
     )
 
-@admin.register(Film)
-class FilmAdmin(admin.ModelAdmin):
+@admin.register(Movie)
+class MovieAdmin(admin.ModelAdmin):
     list_display=(
         "id",
         "title",
-        "genres",
         "duration",
     )
 
-@admin.register(FilmReview)
-class FilmReviewAdmin(admin.ModelAdmin):
+@admin.register(MovieReview)
+class MovieReviewAdmin(admin.ModelAdmin):
     list_display=(
         "id",
         "author",
-        "film",
+        "movie",
     )
